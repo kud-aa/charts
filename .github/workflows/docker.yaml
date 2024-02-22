@@ -34,5 +34,3 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/etherpad:${{ env.VERSION }}
-          build-args: |
-            ETHERPAD_PLUGINS="ep_comments_page ep_author_neat ep_font_size"

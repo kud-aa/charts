@@ -4,10 +4,12 @@
 
 replicaCount: 1
 
+
 image:
-  repository: nginx
+  repository: akudaybergenov/etherpad
+  # deafult image
+  tag: latest
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
 
 imagePullSecrets: []
 nameOverride: ""

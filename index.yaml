@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  etherpad:
+  - apiVersion: v2
+    created: "2024-02-24T21:07:00.308525687Z"
+    description: Deploy Etherpad
+    digest: 7ae2016eb1c94209e6d39709230e125fb2ed3136d996788b39e72c6c5d70e30b
+    name: etherpad
+    type: application
+    urls:
+    - https://github.com/kud-aa/charts/releases/download/etherpad-0.1.0/etherpad-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-02-24T21:07:00.308574098Z"

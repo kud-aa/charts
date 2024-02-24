@@ -7,8 +7,6 @@ replicaCount: 1
 
 image:
   repository: akudaybergenov/etherpad
-  # deafult image
-  tag: latest
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []

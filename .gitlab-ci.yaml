@@ -1,0 +1,12 @@
+.default_rules:
+  rules:
+    - changes:
+    - if: $CI_COMMIT_BRANCH == 'master'
+    
+stages:
+ - build-push
+ - helm-chart-release
+
+include:
+  - local: '/ci/build-push.yaml'
+  - local: '/ci/helm-chart-release.yaml'

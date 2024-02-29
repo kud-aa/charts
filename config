@@ -1,0 +1,2 @@
+ETHERPAD_VERSION="1.9.7"
+ETHERPAD_PLUGINS="ep_comments_page ep_author_neat ep_font_size ep_font_color"

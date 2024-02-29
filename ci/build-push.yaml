@@ -3,15 +3,12 @@ build-and-push-image:
   image: docker:latest
   services:
     - docker:dind
-  variables:
-    ETHERPAD_VERSION: "1.9.7"
   before_script:
+    - export $(cat config | xargs)
     - apk add --no-cache git
     - git clone --branch $ETHERPAD_VERSION https://github.com/ether/etherpad-lite.git
     - cd etherpad-lite
     - echo "$HARBOR_PASSWORD" | docker login $HARBOR_SERVER -u "$HARBOR_USER" --password-stdin
   script: 
-    - >
-      docker build . -t "$HARBOR_SERVER/etherpad:$ETHERPAD_VERSION"
-      --build-arg ETHERPAD_PLUGINS="ep_comments_page ep_author_neat ep_font_size ep_font_color"
+    - docker build . -t "$HARBOR_SERVER/etherpad:$ETHERPAD_VERSION" --build-arg $ETHERPAD_PLUGINS
     - docker push "$NEXUS_SERVER/etherpad:$ETHERPAD_VERSION"

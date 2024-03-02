@@ -10,5 +10,5 @@ build-and-push-image:
     - cd etherpad-lite
     - echo "$HARBOR_PASSWORD" | docker login $HARBOR_SERVER -u "$HARBOR_USER" --password-stdin
   script: 
-    - docker build . -t "demo.goharbor.io/etherpard_custom/etherpad" --build-arg $ETHERPAD_PLUGINS
-    - docker push "$NEXUS_SERVER/etherpard_custom/etherpad:$ETHERPAD_VERSION"
+    - docker build . -t "$HARBOR_SERVER/etherpad:$ETHERPAD_VERSION" --build-arg $ETHERPAD_PLUGINS
+    - docker push "$HARBOR_SERVER/etherpad:$ETHERPAD_VERSION"

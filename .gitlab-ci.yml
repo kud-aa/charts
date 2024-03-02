@@ -5,8 +5,8 @@
     
 stages:
  - build-push
-  # - helm-chart-release
+ - helm-chart-release
 
 include:
   - local: '/ci/build-push.yaml'
-  #- local: '/ci/helm-chart-release.yaml'
+  - local: '/ci/helm-chart-release.yaml'

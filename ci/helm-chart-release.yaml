@@ -1,7 +1,8 @@
 helm_release_chart:
   stage: helm-chart-release
-  image: alpine/helm
-  entrypoint: ["/bin/sh", "-c"]
+  image:
+    name: alpine/helm
+    entrypoint: ["/bin/sh", "-c"]
   script:
     - helm package charts/etherpad/
     - helm push etherpad*.tgz etherpad-0.1.0.tgz oci://$HARBOR_SERVER

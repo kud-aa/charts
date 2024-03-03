@@ -3,6 +3,8 @@ helm_release_chart:
   image:
     name: alpine/helm
     entrypoint: ["/bin/sh", "-c"]
+  before_script:
+    - echo "$HARBOR_PASSWORD" | helm registry login $HARBOR_SERVER --username "$HARBOR_USER" --password-stdin
   script:
     - helm package charts/etherpad/
     - helm push etherpad*.tgz "oci://${HARBOR_SERVER}"
